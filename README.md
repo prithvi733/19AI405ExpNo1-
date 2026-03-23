@@ -1,8 +1,6 @@
 <h1>ExpNo 1 :Developing AI Agent with PEAS Description</h1>
 <h3>Name: PRITHVIRAJ V</h3>
-<h3>Register Number:212222100038</h3>
-
-
+<h3>Register Number: 212222100038</h3>
 <h3>AIM:</h3>
 <br>
 <p>To find the PEAS description for the given AI problem and develop an AI agent.</p>
@@ -40,10 +38,13 @@
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
-PROGRAM
+
+## Program
 ```
 import random
 import time
+
+
 class Thing: 
     """
     This represents any physical object that can appear in an Environment. """
@@ -55,7 +56,24 @@ class Thing:
     def show_state(self):
         """Display the agent's internal state. Subclasses should override."""
         print("I don't know how to show_state.")
-        def TableDrivenAgentProgram(table): 
+```
+```
+class Agent(Thing):
+    
+    """
+        An Agent is a subclass of Thing """
+
+    def __init__(self, program=None):
+        self.alive = True
+        self.performance = 0 
+        self.program = program
+
+    def can_grab(self, thing):
+        """Return True if this agent can grab this thing. Override for appropriate subclasses of Agent and Thing.""" 
+        return False
+```
+```
+def TableDrivenAgentProgram(table): 
     """
     [Figure 2.7]
     This agent selects an action based on the percept sequence. It is practical only for tiny domains.
@@ -70,8 +88,12 @@ class Thing:
         action = table.get(tuple(percepts))
         return action 
     return program
-    room_A, room_B = (0,0), (1,0)
-    def TableDrivenDoctorAgent():
+```
+```
+room_A, room_B = (0,0), (1,0)
+```
+```
+def TableDrivenDoctorAgent():
     """
     Tabular approach towards hospital function. 
     """
@@ -89,8 +111,12 @@ class Thing:
     ((room_B, "unhealthy"), (room_B, "healthy"), (room_A, "unhealthy")): "treat",
     }
     return Agent(TableDrivenAgentProgram(table))
-    TableDrivenDoctorAgent()
-    class Environment:
+```
+```
+TableDrivenDoctorAgent()
+```
+```
+class Environment:
     """Abstract class representing an Environment. 'Real' Environment classes inherit from this. Your Environment will typically need to implement:
     percept:	Define the percept that an agent sees. execute_action:	Define the effects of executing an action.
     Also update the agent.performance slot.
@@ -163,7 +189,9 @@ class Thing:
             print(" from list: {}".format([(thing, thing.location) for thing in self.things]))
         if thing in self.agents: 
             self.agents.remove(thing)
-            class TrivialDoctorEnvironment(Environment):
+```
+```
+class TrivialDoctorEnvironment(Environment):
     """This environment has two locations, A and B. Each can be unhealthy or healthy. The agent perceives its location and the location's status. This serves as an example of how to implement a simple Environment."""
 
     def __init__(self):
@@ -200,7 +228,9 @@ class Thing:
     def default_location(self, thing):
            
         return random.choice([room_A, room_B])
-        if   __name__ == "__main__":
+```
+```
+if   __name__ == "__main__":
     
     agent = TableDrivenDoctorAgent() 
     environment = TrivialDoctorEnvironment() 
@@ -218,14 +248,9 @@ class Thing:
         print("AgentLocation : {0}".format(agent.location)) 
         print("Performance : {0}".format(agent.performance)) 
         time.sleep(3)
-        ```
-    
-Output:
+```
+## Output
+![image](https://github.com/user-attachments/assets/92967c9e-5697-424b-ba49-c24a353f4943)
 
-<img width="756" height="327" alt="image" src="https://github.com/user-attachments/assets/ff1bcdc0-7225-4ed7-bab7-c02c5cc194e4" />
-
-
-Result:
+## Result
 Thus the Developing AI Agent with PEAS Description was implemented using python programming.
-
-        
