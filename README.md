@@ -41,10 +41,9 @@
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
 PROGRAM
+```
 import random
 import time
-
-
 class Thing: 
     """
     This represents any physical object that can appear in an Environment. """
@@ -219,6 +218,7 @@ class Thing:
         print("AgentLocation : {0}".format(agent.location)) 
         print("Performance : {0}".format(agent.performance)) 
         time.sleep(3)
+        ```
     
 Output:
 
