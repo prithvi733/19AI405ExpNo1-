@@ -41,7 +41,6 @@
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
 PROGRAM
-```
 import random
 import time
 
@@ -220,9 +219,12 @@ class Thing:
         print("AgentLocation : {0}".format(agent.location)) 
         print("Performance : {0}".format(agent.performance)) 
         time.sleep(3)
-        ```
+    
 Output:
+
 <img width="756" height="327" alt="image" src="https://github.com/user-attachments/assets/ff1bcdc0-7225-4ed7-bab7-c02c5cc194e4" />
+
+
 Result:
 Thus the Developing AI Agent with PEAS Description was implemented using python programming.
 
